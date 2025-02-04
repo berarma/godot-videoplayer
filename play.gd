@@ -5,6 +5,8 @@ var is_play := true
 
 func _ready():
 	Signals.finished_playing.connect(on_finished_playing)
+	Signals.stop.connect(on_finished_playing)
+
 
 func _pressed():
 	if is_play:

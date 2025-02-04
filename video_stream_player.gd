@@ -25,6 +25,9 @@ func on_finished():
 
 
 func on_load(file: String):
+	if (is_playing()):
+		stop()
+		Signals.finished_playing.emit()
 	stream.file = file
 	duration = get_stream_length()
 
