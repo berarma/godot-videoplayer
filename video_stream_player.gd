@@ -13,6 +13,8 @@ func _ready():
 	Signals.slider_drag_end.connect(on_slider_drag_end)
 	Signals.set_loop.connect(on_set_loop)
 	finished.connect(on_finished)
+	if stream:
+		duration = get_stream_length()
 
 
 func _process(_delta: float):
