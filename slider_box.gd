@@ -12,12 +12,12 @@ func _ready():
 
 
 func format_time(time: float) -> String:
-	var seconds = roundi(time) % 60
+	var seconds = floori(time) % 60
 	@warning_ignore("integer_division")
-	var minutes = roundi(time / 60) % 60
+	var minutes = floori(time / 60) % 60
 	@warning_ignore("integer_division")
-	var hours = roundi(time / 3600)
-	return "%02d:%02d:%02d.%02d" % [hours, minutes, seconds, roundi(time * 100) % 100]
+	var hours = floori(time / 3600)
+	return "%02d:%02d:%02d.%02d" % [hours, minutes, seconds, floori(time * 100) % 100]
 
 
 func slider_update(p_value: float, p_duration: float):
