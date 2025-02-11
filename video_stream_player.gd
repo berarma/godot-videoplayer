@@ -32,6 +32,7 @@ func on_load(file: String):
 		Signals.finished_playing.emit()
 	stream.file = file
 	duration = get_stream_length()
+	Signals.resize.emit(get_video_texture().get_size())
 
 
 func on_play():

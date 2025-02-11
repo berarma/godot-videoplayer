@@ -10,13 +10,13 @@ func _ready():
 
 func _pressed():
 	if is_play:
-		Signals.play.emit()
 		text = "Pause"
 		is_play = false
+		Signals.play.emit()
 	else:
-		Signals.pause.emit()
 		text = "Play"
 		is_play = true
+		Signals.pause.emit()
 
 
 func on_finished_playing():
