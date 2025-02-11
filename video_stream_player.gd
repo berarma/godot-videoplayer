@@ -35,6 +35,9 @@ func on_load(file: String):
 
 
 func on_play():
+	if not stream.file:
+		Signals.finished_playing.emit()
+		return
 	paused = false
 	if not is_playing():
 		play()
