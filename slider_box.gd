@@ -11,21 +11,21 @@ func _ready():
 	slider.drag_ended.connect(on_drag_ended)
 
 
-func format_time(time: int) -> String:
-	var seconds = time % 60
+func format_time(time: float) -> String:
+	var seconds = roundi(time) % 60
 	@warning_ignore("integer_division")
-	var minutes = (time / 60) % 60
+	var minutes = roundi(time / 60) % 60
 	@warning_ignore("integer_division")
-	var hours = time / 36004
-	return "%02d:%02d:%02d" % [hours, minutes, seconds]
+	var hours = roundi(time / 3600)
+	return "%02d:%02d:%02d.%02d" % [hours, minutes, seconds, roundi(time * 100) % 100]
 
 
 func slider_update(p_value: float, p_duration: float):
 	slider.value = p_value
 	slider.max_value = p_duration
-	var time_pos = roundi(p_value)
+	var time_pos = p_value
 	time_pos_label.text = format_time(time_pos)
-	var duration = roundi(p_duration)
+	var duration = p_duration
 	duration_label.text = format_time(duration)
 
 
