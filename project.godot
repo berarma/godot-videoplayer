@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot Videoplayer"
 run/main_scene="uid://dwvllcusbop5p"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +24,10 @@ Signals="*res://signals.gd"
 window/size/viewport_width=640
 window/size/viewport_height=480
 window/dpi/allow_hidpi=false
+
+[editor]
+
+movie_writer/movie_file="/home/berarma/p/godot-videoplayer/movie.avi"
 
 [rendering]
 
