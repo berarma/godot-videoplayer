@@ -131,6 +131,7 @@ script = ExtResource("2_i67kh")
 title = "Open a File"
 initial_position = 1
 size = Vector2i(734, 360)
+auto_translate = false
 ok_button_text = "Open"
 file_mode = 0
 access = 2

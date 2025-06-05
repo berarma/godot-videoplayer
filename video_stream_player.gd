@@ -12,6 +12,7 @@ func _ready():
 	Signals.slider_drag_start.connect(on_slider_drag_start)
 	Signals.slider_drag_end.connect(on_slider_drag_end)
 	Signals.set_loop.connect(on_set_loop)
+	Signals.speed_update.connect(on_speed_update)
 	finished.connect(on_finished)
 	if stream:
 		duration = get_stream_length()
@@ -65,3 +66,7 @@ func on_slider_drag_end(value_changed: bool, p_value: float):
 
 func on_set_loop(toggled_on: bool):
 	loop = toggled_on
+
+
+func on_speed_update(p_speed_scale: float):
+	speed_scale = p_speed_scale
